@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Search</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='green_arrow.png') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">Stock Search</h1>
+
+        <div class="search-section">
+            <label for="stockSymbol" class="form-label">Stock Ticker Symbol <span class="required">*</span></label>
+            <input type="text" class="form-control" id="stockSymbol" placeholder="e.g. AAPL, MSFT">
+            <div class="button-group">
+                <button type="button" class="btn btn-primary" onclick="searchStock()">Search</button>
+                <button type="button" class="btn btn-secondary" onclick="clearResults()">Clear</button>
+            </div>
+        </div>
+
+        <div id="error-message" class="error-message" aria-live="polite"></div>
+
+        <div class="tabs-wrapper">
+            <div id="tabs" class="tabs" role="tablist">
+                <button type="button" class="tab-button active" data-tab="company-outlook" onclick="showTab('company-outlook')" role="tab" aria-selected="true">Company Outlook</button>
+                <button type="button" class="tab-button" data-tab="stock-summary" onclick="showTab('stock-summary')" role="tab" aria-selected="false">Stock Summary</button>
+                <button type="button" class="tab-button" data-tab="charts" onclick="showTab('charts')" role="tab" aria-selected="false">Charts</button>
+                <button type="button" class="tab-button" data-tab="latest-news" onclick="showTab('latest-news')" role="tab" aria-selected="false">Latest News</button>
+            </div>
+
+            <div id="company-outlook" class="tab-content active-tab" role="tabpanel">
+                <div id="results-company-outlook" class="tab-inner"></div>
+            </div>
+
+            <div id="stock-summary" class="tab-content" role="tabpanel">
+                <div id="results-stock-summary" class="tab-inner"></div>
+            </div>
+
+            <div id="charts" class="tab-content" role="tabpanel">
+                <div id="results-charts" class="tab-inner">
+                    <p class="placeholder-text">Charts content coming soon.</p>
+                </div>
+            </div>
+
+            <div id="latest-news" class="tab-content" role="tabpanel">
+                <div id="results-latest-news" class="tab-inner">
+                    <p class="placeholder-text">Latest news content coming soon.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+

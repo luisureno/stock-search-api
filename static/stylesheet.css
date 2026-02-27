@@ -1,0 +1,223 @@
+/* Same palette: #6C90D1 blue, #e8e9ea light gray, red for errors */
+:root {
+    --color-primary: #6C90D1;
+    --color-primary-dark: #5a7ab8;
+    --color-bg: #e8e9ea;
+    --color-error: #c0392b;
+    --color-text: #333;
+    --color-border: #ccc;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: var(--color-primary);
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    color: var(--color-text);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.container {
+    background-color: var(--color-bg);
+    border-radius: 8px;
+    padding: 32px;
+    width: 100%;
+    max-width: 720px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.page-title {
+    margin: 0 0 24px;
+    font-size: 1.75rem;
+    color: var(--color-text);
+    text-align: center;
+}
+
+.search-section {
+    margin-bottom: 20px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.required {
+    color: var(--color-error);
+}
+
+.form-control {
+    width: 100%;
+    max-width: 280px;
+    padding: 10px 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    font-size: 1rem;
+    margin-bottom: 12px;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(108, 144, 209, 0.25);
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-dark);
+}
+
+.btn-secondary {
+    background-color: white;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+    background-color: #f0f0f0;
+}
+
+.error-message {
+    color: var(--color-error);
+    margin-bottom: 16px;
+    min-height: 1.5em;
+    font-weight: 500;
+}
+
+.tabs-wrapper {
+    margin-top: 24px;
+}
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-bottom: 0;
+    background-color: var(--color-primary);
+    border-radius: 8px 8px 0 0;
+    padding: 8px 8px 0;
+}
+
+.tab-button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px 6px 0 0;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.tab-button:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: white;
+}
+
+.tab-button.active {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+.tab-content {
+    display: none;
+    background-color: var(--color-bg);
+    padding: 20px;
+    border: 1px solid var(--color-border);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+}
+
+.tab-content.active-tab {
+    display: block;
+}
+
+.tab-inner {
+    min-height: 60px;
+}
+
+.placeholder-text {
+    color: #666;
+    margin: 0;
+}
+
+/* Result tables (created by script.js) */
+.tab-inner table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.tab-inner table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.tab-inner table tr:last-child td {
+    border-bottom: none;
+}
+
+.tab-inner table td:first-child {
+    font-weight: 500;
+    width: 40%;
+    background-color: rgba(108, 144, 209, 0.08);
+}
+
+.tab-inner table td:last-child {
+    text-align: right;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 12px;
+    }
+
+    .container {
+        padding: 20px;
+    }
+
+    .form-control {
+        max-width: none;
+    }
+
+    .tabs {
+        padding: 6px 6px 0;
+    }
+
+    .tab-button {
+        padding: 10px 14px;
+        font-size: 0.9rem;
+    }
+}
