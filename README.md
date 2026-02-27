@@ -1,4 +1,4 @@
-# Stock Search API ddd
+# Stock Search API
 
 Flask app that looks up stock info by ticker symbol using the Tiingo API.
 
